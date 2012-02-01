@@ -23,13 +23,6 @@ AVAudioPlayer *sound;
 #pragma mark Application lifecycle
 
 
-//const char *url = "rtmp://server.audiopedia.su:8888/vod";
-
-
-
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
@@ -40,37 +33,13 @@ AVAudioPlayer *sound;
 	
     [self.window makeKeyAndVisible];
     
-	//optarg =  (char*)"rtmp://server.audiopedia.su/vod/детское радио/июнь/99 зайцев - (по мотивам норвежских сказок).mp3";
 	
-//#ifdef _DEBUG	
-//	NSString *dPath = [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0];
-//	
-//	NSString *dPath_netstackdump = [dPath stringByAppendingPathComponent:@"netstackdump.txt"];
-//	NSString *dPath_netstackdump_read = [dPath stringByAppendingPathComponent:@"netstackdump_read.txt"];
-//	
-//    netstackdump = fopen([dPath_netstackdump UTF8String], "wb");
-//	netstackdump_read = fopen([dPath_netstackdump_read UTF8String], "wb");
-	
-//#endif
-//	[self connect];
-
 	
 	object1 = [[RTMPFileDownloader alloc] initWithFrame:CGRectMake(20, 40, 150, 25)];
 	[object1 setDelegate:self];
 	[window addSubview:object1];
-//	[object1 setResumeFromMs:1996000];
 	[NSThread detachNewThreadSelector:@selector(downloadObject1) toTarget:self withObject:nil];
 	
-	//object2 = [[RTMPFileDownloader alloc] init];
-//	[object2 setDelegate:self];
-//	[NSThread detachNewThreadSelector:@selector(downloadObject2) toTarget:self withObject:nil];
-
-//#ifdef _DEBUG
-//	if (netstackdump != 0)
-//		fclose(netstackdump);
-//	if (netstackdump_read != 0)
-//		fclose(netstackdump_read);
-//#endif	
     return YES;
 }
  
